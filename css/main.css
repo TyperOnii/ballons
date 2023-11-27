@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../images/bg.jpg) center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+.header__box {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__button {
+  animation-fill-mode: backwards;
+  animation-name: btnToUp;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+.header-logo {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  height: 70px;
+  width: 56px;
+}
+
+.title-first {
+  color: white;
+  letter-spacing: 1rem;
+  font-size: 5rem;
+  font-weight: 800;
+}
+.title-first__main {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: white;
+  display: block;
+  text-align: center;
+  animation-name: leftToRight;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  backface-visibility: hidden;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+.title-first__secondary {
+  font-size: 4rem;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 5rem;
+  animation-name: rightToLeft;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  backface-visibility: hidden;
+}
+
+.button:link, .button:visited {
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  color: #777777;
+  background-color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease-in;
+}
+.button:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+.button:hover::after {
+  opacity: 0;
+  transform: scale(1.2, 1.6);
+}
+.button:active {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.button::after {
+  content: "";
+  width: 100%;
+  border-radius: 50px;
+  height: 100%;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes btnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  padding: 50px;
+}
+
+.wrapper {
+  background-color: #777777;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=main.css.map */

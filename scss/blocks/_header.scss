@@ -1,0 +1,156 @@
+.wrapper {
+}
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(
+      90deg,
+      rgba(186, 133, 84, 0.7) 0.03%,
+      rgba(1, 1, 1, 0.7) 99.94%
+    ),
+    url(../images/bg.jpg) center / cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  &__box {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__title {
+  }
+
+  &__button {
+    animation-fill-mode: backwards;
+    animation-name: btnToUp;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+}
+.header-logo {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  height: 70px;
+  width: 56px;
+}
+.title-first {
+  color: $white;
+  letter-spacing: 1rem;
+  font-size: 5rem;
+  font-weight: 800;
+
+  &__main {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: $white;
+    display: block;
+    text-align: center;
+    animation-name: leftToRight;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+    animation-duration: 1s;
+    animation-delay: 1s;
+  }
+
+  &__secondary {
+    font-size: 4rem;
+    font-weight: 100;
+    letter-spacing: 0.5rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 5rem;
+    animation-name: rightToLeft;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    backface-visibility: hidden;
+  }
+}
+.button {
+  &:link,
+  &:visited {
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    color: $grey;
+    background-color: $white;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease-in;
+  }
+  &:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+    &::after {
+      opacity: 0;
+      transform: scale(1.2, 1.6);
+    }
+  }
+  &:active {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    border-radius: 50px;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes btnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
